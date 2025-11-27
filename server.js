@@ -69,4 +69,8 @@ app.get("/webhook", (req, res) => {
 });
 
 
+app.get('/', (req, res) => {
+  res.status(200).send("Server is online")
+})
+
 app.listen(3000, () => console.log("🚀 Webhook running on port 3000"));
