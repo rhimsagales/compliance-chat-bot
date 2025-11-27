@@ -14,7 +14,7 @@ const messageTypeHandler = require('./message-type-handler-util.js');
 
 dotenv.config();
 const app = express();
-
+const VERIFY_TOKEN = process.env.VERIFY_TOKEN
 
 app.post(
   '/webhook',
