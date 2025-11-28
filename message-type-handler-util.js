@@ -36,7 +36,8 @@ async function commandWithText(payload) {
                 // const questionScope = await geminiUtil.isItTooBroadOrSpecific(text);
                 const questionScope = await cerebrasUtil.isItTooBroadOrSpecific(text); 
                 const length = await pineconeUtil.countDocuments('compliance-knowledge-base', 'all-policies');
-                const broad = Math.floor(length / 2)
+                // const broad = Math.floor(length / 2);
+                const broad = length;
                 const average = Math.floor(broad / 2);
                 const specific = Math.floor(broad / 5);
                 const topK = questionScope === "broad" ? broad : questionScope === "specific" ? specific : average;
